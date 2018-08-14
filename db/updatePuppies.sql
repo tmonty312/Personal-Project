@@ -1,0 +1,4 @@
+UPDATE puppy;
+ 
+
+SELECT * puppy;

@@ -25,9 +25,7 @@ app.use(session({
 app.use(bodyParser.json())
 
 app.get('/api/puppy', controller.getPuppy)
-app.post('/api/puppy', controller.addPuppy)
-app.put('/api/puppy/:id', controller.updatePuppy)
-app.delete('/api/puppy/:id', controller.deletePuppy)
+
 
 
 app.listen(port, ()=>console.log('I am listening on',port))

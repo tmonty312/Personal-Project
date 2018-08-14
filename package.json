@@ -25,5 +25,9 @@
   "devDependencies": {},
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "nodemonConfig": {
+    "ext": "js,sql",
+    "ignore": ["src/*", "public/*"]
+  }
 }
