@@ -25,7 +25,7 @@
 //                         <h2>{puppy.title}</h2>
 //                         <h2>{"$" + puppy.price + ".00"}</h2>
 //                         {/* <div className="shopping-cart-button-container">
-//                             <button className="shopping-cart-button" onClick={() => this.props.removeFromShoppingCart(element)}>Remove From Shopping Cart</button>
+//                             <button className="shopping-cart-button" onClick={() => this.props.removeFromShoppingCart(puppy)}>Remove From Shopping Cart</button>
 //                         </div> */}
 //                     </div>
 //                 </div>
