@@ -25,7 +25,9 @@ class ShoppingCart extends Component {
                 <p>${item.price} each</p>
                 {/* <p>Quantity: {item.quantity}</p> */}
                 <br/>
-                <button onClick={() => this.props.deleteFromCart(item.id)}>Delete</button>
+                <h1>Pay half down to reserve your Pup! Pay the rest when you pick up your new friend!</h1>
+                <h2>(Down payments are non-refundible)</h2>
+                <button onClick={() => this.props.deleteFromCart(item.id)}>Remove This Pup</button>
             </div>
         )
     })
