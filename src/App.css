@@ -1,5 +1,14 @@
 .App {
   text-align: center;
+  /* background-image: url("https://wallpapertag.com/wallpaper/full/c/8/b/197047-most-popular-rustic-barn-wood-background-1942x1152-for-mac.jpg"); */
+  height: auto;
+  width: 100%;
+  background-size: cover;
+}
+
+.textparagraph{
+  font-size: 10px;
+    font-family: Arial,Helvetica,sans-serif;
 }
 
 .App-logo {
@@ -10,7 +19,19 @@
 .Navbar {
   background-color: red;
   width: 100%;
-}
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+   }
+
+  .NavButtons {
+    display: flex;
+  justify-content: space-around;
+    padding: 10px;
+  }
 
 .App-header {
   background-color: #222;
@@ -34,5 +55,9 @@
 
 .Footer {
   background-color: red;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
   width: 100%;
 }

@@ -1,45 +1,45 @@
 import React,{Component} from 'react'
 import Puppy from './Puppy'
 import axios from 'axios'
+import {connect} from 'react-redux'
+import {getPuppies} from '../Ducks/reducer'
+import ShoppingCart from './ShoppingCart';
 
 
 class Dashboard extends Component{
-    constructor(props){
-        super(props)
-        this.state = {
-          puppies: [],
-          cart: []
-        }
-      }
-    
-      componentDidMount(){
-        axios.get('/api/puppy').then(results => {
-          this.setState({puppies: results.data})
-        })
-      }
-    
-      updatePuppy= (puppies) => {
-        this.setState({puppies: puppies})
-      }
-    
-      addToCart=(id)=>{
-        axios.post(`/api/cart/${id}`).then(results =>{
-          this.setState({cart: results.data})
-        })
-      }
-      render() {
+  componentDidMount(){
+    this.props.getPuppies()
+  }
+
+  updatePuppy= (puppies) => {
+    return puppies
+  }
+  
+  render() {
    
-    let puppyMap = this.state.puppies.map(puppy => {
-        return <Puppy key={puppy.id} puppy={puppy} updatePuppy={this.updatePuppy} addToCart={this.addToCart} cart={this.state.cart}/>
-      })
-      console.log(this.state.cart)
+    let puppiesList = this.props.puppiesList.map(puppy => {
+      return <Puppy 
+                key={puppy.id} 
+                puppy={puppy} 
+                updatePuppy={this.updatePuppy} 
+                addToCart={this.props.addToCart} 
+                cart={this.cart}/>
+    })
+
     return(
-        <div className= "dashboard">
-            {puppyMap}
-        </div>
+      <div className= "dashboard">
+        <h3>Bring a Puppy Home!</h3>
+        {puppiesList}
+      </div>
     )
-    }
+  }
 }
 
+function mapStateToProps(state) {
+  console.log
+  return {
+    puppiesList: state.puppiesList
+  }
+}
 
-export default Dashboard
+export default connect(mapStateToProps,{getPuppies})(Dashboard)

@@ -1,44 +1,51 @@
-// import React, { Component } from 'react';
+import React, { Component } from 'react';
+import {connect} from 'react-redux'
+import {deleteFromCart} from '../Ducks/reducer'
+import Dashboard from './Dashboard';
+import Puppies from './Puppy'
 
 
-// class ShoppingCart extends Component {
-//     constructor(props) {
-//         super(props);
+class ShoppingCart extends Component {
+    
+    
+    // round(value, decimals) {
+    //     return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+    //   }
+    
 
-//         this.state = {
-//             shoppingCart: this.props.shoppingCart
-//         }
-//     }
-//     componentWillReceiveProps(nextProps) {
-//         this.setState({
-//             shoppingCart: nextProps.shoppingCart
-//         })
-//     }
+   render() {
+    let total = 0
+    let cart = this.props.cart.map(item => {
+        total += (item.price /2)
+        return (
+            <div key={item.id}>
+                <h4>{item.breed}</h4>
+                <img src={item.image} alt="" />               
+                <p>{item.description}</p>
+                <p>${item.price} each</p>
+                {/* <p>Quantity: {item.quantity}</p> */}
+                <br/>
+                <button onClick={() => this.props.deleteFromCart(item.id)}>Delete</button>
+            </div>
+        )
+    })
+    // total = this.round(total, 2)
+    return(
+        <div>
+            <h3>Cart</h3>
+            {cart}
+            <br />
+            <p>Total: ${total}</p>
+            {/* <button onClick={this.props.checkout}>Checkout</button> */}<button>Checkout</button>
+        </div>
+    )
+}
+}
 
-//     render(){
-//         let shoppingCartDisplay = this.state.shoppingCart.map(puppy => {
-//             return (
-//                 <div className="shopping-cart-product-container" key={puppy.id}>
-//                     <img src={puppy.image} alt="" />
-//                     <div className="shopping-cart-info">
-//                         <h2>{puppy.breed}</h2>
-//                         <h2>{puppy.title}</h2>
-//                         <h2>{"$" + puppy.price + ".00"}</h2>
-//                         {/* <div className="shopping-cart-button-container">
-//                             <button className="shopping-cart-button" onClick={() => this.props.removeFromShoppingCart(puppy)}>Remove From Shopping Cart</button>
-//                         </div> */}
-//                     </div>
-//                 </div>
-//             )
-//         })
-//         return(
-//             <div className="shopping-cart-container">
-//                 {shoppingCartDisplay[0] ? 
-//                 shoppingCartDisplay
-//                 : <div className="go-buy-something"><h1>You Have no puppies!  Go Find your new Pup!</h1></div>}
-//             </div>
-//         )
-//     }
-// }
+function mapStateToProps(state){
+    return{
+        cart: state.cart
+    }
+}
 
-// export default ShoppingCart;
+ export default connect(mapStateToProps, { deleteFromCart })(ShoppingCart);
