@@ -1,3 +1,6 @@
+ const configureStripe = require('stripe')
+
+ const stripe = configureStripe(process.env.STRIPE_SECRET_KEY);
 
 
 module.exports= {
@@ -37,5 +40,18 @@ module.exports= {
             res.status(200).send(results)
         })
     },
+
+   checkout: (req, res) => {
+       const db = req.app.get('db')
+       stripe.charges.create(req.body)
+       db.checkout()
+       .then(results => {
+           res.status(200).send(results)
+       })
+       .catch(err => {
+           console.log(err)
+           res.status(500).send('Card is not emptying')
+       })
+   }
 
 }

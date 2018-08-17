@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {deleteFromCart} from '../Ducks/reducer'
+import Checkout from './Checkout'
 import Dashboard from './Dashboard';
 import Puppies from './Puppy'
 
@@ -38,7 +39,13 @@ class ShoppingCart extends Component {
             {cart}
             <br />
             <p>Total: ${total}</p>
-            {/* <button onClick={this.props.checkout}>Checkout</button> */}<button>Checkout</button>
+            {/* <button onClick={this.props.checkout}>Checkout</button> */}
+            <Checkout
+            name={"Puppy Barn"}
+            description={"Your New Puppy"}
+            amount={total}/>
+            <br/>
+           
         </div>
     )
 }

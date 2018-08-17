@@ -10,6 +10,7 @@ import Home from './Components/Home'
 import Footer from './Components/Footer'
 import Navbar from './Components/Navbar'
 import ShoppingCart from './Components/ShoppingCart'
+import Checkout from './Components/Checkout'
 import { Switch, Route } from 'react-router-dom'
 
 import axios from 'axios'
@@ -34,6 +35,7 @@ class App extends Component {
 <Route path='/about' component={About}/>
 <Route path='/faq' component={FAQ}/>
 <Route path='/puppycart' component={ShoppingCart}/>
+<Checkout/>
 <Route path='/social/ig' component={() => window.location = 'https://www.instagram.com/thepuppybarn/'}/>
 <Route path='/social/fb' component={() => window.location = 'https://www.facebook.com/puppybarn/'}/>
 <Route path='/social/youtube' component={() => window.location = 'https://www.youtube.com/channel/UCeb425x8VlfPHxP671f0PMA'}/>

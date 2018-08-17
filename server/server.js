@@ -3,16 +3,21 @@ const bodyParser = require('body-parser')
 const controller = require('./Controllers/controller')
 const massive = require('massive')
 const session = require('express-session')
-const cartCtrl = require('./Controllers/cartCtrl')
+const cors = require('cors');
 require('dotenv').config()
+
+const cartCtrl = require('./Controllers/cartCtrl')
+
 
 const port = process.env.SERVER_PORT || 4141
 
 const app = express()
+
 massive(process.env.CONNECTION_STRING).then(db => {
     app.set('db', db)
     console.log('db is connected!')
 })
+
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -32,6 +37,10 @@ app.post('/api/cart/:id', cartCtrl.addToCart)
 //app.put('/api/cart/:id', cartCtrl.updateQuantity)
 app.delete('/api/cart/:id', cartCtrl.deleteFromCart)
 //app.delete('/api/cart', cartCtrl, deleteFromCart)
+app.post('/api/checkout', cartCtrl.checkout)
+// const configureRoutes = app => {
+//     paymentApi(app);
+//   };
 
 
 
