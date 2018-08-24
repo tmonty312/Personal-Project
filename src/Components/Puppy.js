@@ -26,13 +26,15 @@ class Puppy extends Component{
             //<ShoppingCart/>
             let { puppy } = this.props
         return(
-            <div key={puppy.id}>
-                <img src={puppy.image} alt="" />
-                <h2>{puppy.breed}</h2>
-                <h2>{puppy.description}</h2>
-                <h3>{"$" + puppy.price + ".00"}</h3>
-                <Link to='./puppycart'><button onClick={() => this.addPupToCart(puppy.id)}>Adopt this Cute Guy!!</button></Link>          
-            </div>
+            <div className="textContainer">  
+                <div key={puppy.id}>
+                    <img className="pupimage" src={puppy.image} alt="" />
+                    <h2>{puppy.breed}</h2>
+                    <h2>{puppy.description}</h2>
+                    <h3>{"$" + puppy.price + ".00"}</h3>
+                    <Link to='./puppycart'><button className="buybutton" onClick={() => this.addPupToCart(puppy.id)}>Adopt this Cute Guy!!</button></Link>          
+                </div>
+            </div> 
         )
     }
 

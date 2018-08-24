@@ -1,12 +1,13 @@
 .App {
   text-align: center;
-  /* background-image: url("https://wallpapertag.com/wallpaper/full/c/8/b/197047-most-popular-rustic-barn-wood-background-1942x1152-for-mac.jpg"); */
+  background-image: url("https://wallpapertag.com/wallpaper/full/c/8/b/197047-most-popular-rustic-barn-wood-background-1942x1152-for-mac.jpg");
+  background-repeat: no-repeat;
   overflow: auto;
-  height: auto;
-  width: 100%;
+  height: 100vh;
+  width: auto;
   background-size: cover;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  background-attachment: fixed;
+  background-position: bottom;
 }
 
 .textparagraph{
@@ -19,8 +20,65 @@
   height: 80px;
 }
 
+.HomeBut{
+  margin-bottom: 140px;
+  /* display: flex; */
+  /* justify-content: space-around; */
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+}
+
+.homeButtons{
+  width: 35%;
+  height: 30vh;
+  background:  rgba(242, 246, 247, 0.7);
+  margin-top: 70px;
+margin-bottom: 20px;
+border: black;
+border-style: solid;
+border-width: .5px;
+border-radius: 15px;
+padding: 10px;
+font-size: 35px;
+font-family: Arial,Helvetica,sans-serif;
+}
+
+.dashTitle {
+  margin-top: 50px;
+}
+
+.pupimage {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 30px;
+    border-style: solid;
+    border:black;
+    border-width: .5px;
+    border-radius: 5px;
+}
+.buybutton{
+  margin-bottom: 30px;
+}
+
+.textContainer{
+background:  rgba(242, 246, 247, 0.7);
+width: 75%;
+height: fit-content;
+margin: 0 auto;
+margin-top: 70px;
+margin-bottom: 120px;
+border: black;
+border-style: solid;
+border-width: .5px;
+border-radius: 15px;
+}
+
 .Navbar {
-  background-color: red;
+  background-color: transparent;
+  background: rgba(242, 246, 247, 0.322);
+  height: 70px;
   width: 100%;
   overflow: hidden;
   position: fixed;
@@ -30,21 +88,27 @@
    }
 
    .homeNavB{
+    height:40px;
     justify-content: flex-start; 
   }
   .foundationNavB{
+    height:40px;
     justify-content: flex-end;
   }
   .puppiesNavB{
+    height:40px;
     justify-content: space-around;
   }
   .aboutNavB{
+    height:40px;
     justify-content: space-around;
   }
   .faqNavB{
+    height:40px;
     justify-content: space-around;
   }
   .locationsNavB{
+    height:40px;
     justify-content: space-around;
   }
 
@@ -76,10 +140,11 @@
 }
 
 .Footer {
-  background-color: red;
+  background-color: #262626;
   width: 100%;
   overflow: hidden;
   position: fixed;
   bottom: 0;
   width: 100%;
+  height: 100px;
 }

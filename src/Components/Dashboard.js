@@ -28,7 +28,7 @@ class Dashboard extends Component{
 
     return(
       <div className= "dashboard">
-        <h3>Bring a Puppy Home!</h3>
+        <h3 className= "dashTitle">Bring a Puppy Home!</h3>
         {puppiesList}
       </div>
     )

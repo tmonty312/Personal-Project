@@ -17,17 +17,20 @@ render(){
     return(
         <div className="Home">
 <header className="App-header">
-<img src="https://s3-media1.fl.yelpcdn.com/bphoto/pQeEyVRAt2tn5GpFsVihHQ/348s.jpg" className="App-logo" alt="logo" />
+<img src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/13902687_625350567634828_5222364184156045150_n.jpg?_nc_cat=0&oh=34acb1268d760d21e3fbfb303f429876&oe=5BFD8D70" className="App-logo" alt="logo" />
 <h1 className="App-title">happy. healthy. home raised.</h1>
 </header>
 
-<Link to='/location'><button>Locations</button></Link>
-<Link to='/puppies'><button>Puppies</button></Link>
-<Link to='/foundation'><button>Foundation</button></Link>
-<Link to='/about'><button>About</button></Link>
-<Link to='/faq' ><button>FAQ</button></Link>
-{/* <Dashboard/> */}
-
+<div className="HomeBut">
+    <Link to='/location'><button className= "homeButtons">Locations</button></Link>
+    <Link to='/puppies'><button  className= "homeButtons">Puppies</button></Link>
+    <br/>
+    <Link to='/foundation'><button className= "homeButtons">Foundation</button></Link>
+    <Link to='/about'><button className= "homeButtons">About</button></Link>
+    <br/>
+    <Link to='/faq' ><button className= "homeButtons">FAQ</button></Link>
+    {/* <Dashboard/> */}
+</div>
 </div>
     );
 }
