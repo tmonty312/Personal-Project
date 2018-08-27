@@ -9,6 +9,23 @@
   background-attachment: fixed;
   background-position: bottom;
 }
+.App-header {
+ margin-top: 0px;
+ background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/14572761_658201457683072_6832837699926706641_n.jpg?_nc_cat=0&oh=0bfb3d57b36e2877e1b04500e2119e8d&oe=5BFB173E");
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: bottom;
+ height: 85vh;
+ padding: 150px;
+ color: white;
+ outline: black;
+ font-family:  'Lobster', cursive;
+ font-size: xx-large;
+ border: black;
+border-style: solid;
+border-width: .5px;
+border-radius: 15px;
+}
 
 .textparagraph{
   font-size: 10px;
@@ -16,12 +33,12 @@
 }
 
 .App-logo {
-  
-  height: 80px;
+  height: 60vh;
+  padding: 30px;
 }
 
 .HomeBut{
-  margin-bottom: 140px;
+  margin-bottom: 150px;
   /* display: flex; */
   /* justify-content: space-around; */
   /* flex-direction: row; */
@@ -40,7 +57,7 @@ border-width: .5px;
 border-radius: 15px;
 padding: 10px;
 font-size: 35px;
-font-family: Arial,Helvetica,sans-serif;
+font-family:  'Lobster', cursive;
 }
 
 .dashTitle {
@@ -56,7 +73,7 @@ font-family: Arial,Helvetica,sans-serif;
     border-style: solid;
     border:black;
     border-width: .5px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .buybutton{
   margin-bottom: 30px;
@@ -75,6 +92,19 @@ border-width: .5px;
 border-radius: 15px;
 }
 
+.totalBox{
+  background:  rgba(242, 246, 247, 0.7);
+  width: 20%;
+  height: 17vh;
+  margin: 0 auto;
+  margin-top: 90px;
+  margin-bottom: 30px;
+  border: black;
+  border-style: solid;
+  border-width: .5px;
+  border-radius: 15px; 
+}
+
 .Navbar {
   background-color: transparent;
   background: rgba(242, 246, 247, 0.322);
@@ -85,49 +115,105 @@ border-radius: 15px;
   top: 0;
   width: 100%;
   display: flex;
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+   }
+
+   .NavButtons{
+    background-color: transparent;
+    border:transparent;
+    display: flex;
+   justify-content: center;
+   height: 40px;
+     padding: 10px;
+    flex-grow: 0;
+    align-content: center;
    }
 
    .homeNavB{
-    height:40px;
-    justify-content: flex-start; 
+     padding: 10px;
+    height:40px; 
+    background-color: transparent;
+    border:transparent;
+    font-size: 1.5em;
+    color: white;
+font-family:  'Lobster', cursive;
+text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
   }
   .foundationNavB{
-    height:40px;
-    justify-content: flex-end;
+    padding: 10px;
+    height:40px; 
+    background-color: transparent;
+    border:transparent;
+    font-size: 1.5em;  
+    color: white;
+font-family:  'Lobster', cursive;
+text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
   }
   .puppiesNavB{
+    padding: 10px;
     height:40px;
-    justify-content: space-around;
+    background-color: transparent;
+    border:transparent;
+    font-size: 1.5em;
+    color: white;
+font-family:  'Lobster', cursive;
+text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
   }
   .aboutNavB{
+    padding: 10px;
     height:40px;
-    justify-content: space-around;
+    background-color: transparent;
+    border:transparent;
+    font-size: 1.5em;
+    color: white;
+font-family:  'Lobster', cursive;
+text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
   }
   .faqNavB{
-    height:40px;
-    justify-content: space-around;
+    padding: 10px;
+    height:40px; 
+    background-color: transparent;
+    border:transparent;
+    font-size: 1.5em;
+    color: white;
+font-family:  'Lobster', cursive;
+text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
   }
   .locationsNavB{
-    height:40px;
-    justify-content: space-around;
-  }
-
-  .NavButtons {
-  justify-content: space-around;
     padding: 10px;
+    height:40px; 
+    background-color: transparent;
+    border:transparent;
+    font-size: 1.5em;
+    color: white;
+font-family:  'Lobster', cursive;
+text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
   }
 
-.App-header {
-  overflow: auto;
-  margin-top: 100px;
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
+  .puppyCartNavB{
+    height:40px;
+    padding: 10px; 
+    background-color: transparent;
+    border:transparent;
+    font-size: 1.5em;
+    color: white;
+font-family:  'Lobster', cursive;
+text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+  }
 
 .App-title {
   font-size: 1.5em;
+  text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
 }
 
 .App-intro {
@@ -142,9 +228,26 @@ border-radius: 15px;
 .Footer {
   background-color: #262626;
   width: 100%;
-  overflow: hidden;
-  position: fixed;
-  bottom: 0;
+  bottom: 0px;
   width: 100%;
   height: 100px;
 }
+
+.socialButtons{
+  backgound-color: white;
+  height: 50px;
+  width:50px;
+  border-size: 0px;
+  border-radius: 50%;
+}
+
+.fab{
+  color: black;
+  size: 50px;
+  width: auto;
+}
+/* white logo */
+/* <img src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/13902687_625350567634828_5222364184156045150_n.jpg?_nc_cat=0&oh=34acb1268d760d21e3fbfb303f429876&oe=5BFD8D70" className="App-logo" alt="logo" /> */
+
+/* transparent logo */
+/* <img id="comp-jehj57caimgimage" alt="" data-type="image" src="https://static.wixstatic.com/media/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.png/v1/fill/w_474,h_414,al_c,q_80,usm_0.66_1.00_0.01/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.webp" style="width: 237px; height: 207px; object-fit: cover;"> */

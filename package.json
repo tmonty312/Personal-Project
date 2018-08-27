@@ -5,7 +5,6 @@
   "main": "./server/server.js",
   "proxy": "http://localhost:4367",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.2.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
     "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
     "@fortawesome/react-fontawesome": "0.1.0-11",
@@ -17,6 +16,7 @@
     "express-session": "^1.15.6",
     "i": "^0.3.6",
     "massive": "^5.2.0",
+    "nodemailer": "^4.6.8",
     "npm": "^6.3.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
@@ -35,7 +35,9 @@
     "eject": "react-scripts eject"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
-  "devDependencies": {},
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.3.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

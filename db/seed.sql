@@ -9,3 +9,6 @@
 -- CREATE TABLE cart(
 --     puppies_id integer references puppies(id)
 -- )
+
+-- ALTER TABLE cart 
+-- ADD quantity Varchar(20) NOT NULL DEFAULT(0); 

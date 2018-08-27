@@ -13,7 +13,6 @@ import ShoppingCart from './Components/ShoppingCart'
 import Checkout from './Components/Checkout'
 import { Switch, Route } from 'react-router-dom'
 
-import axios from 'axios'
 
 
 class App extends Component {
@@ -23,7 +22,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" >
         <div className="Navbar">
             <Navbar/>
         </div>

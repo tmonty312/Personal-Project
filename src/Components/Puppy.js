@@ -2,8 +2,6 @@ import React,{Component} from 'react'
 import {connect} from 'react-redux'
 import {addToCart} from '../Ducks/reducer'
 import { Link } from 'react-router-dom'
-import ShoppingCart from './ShoppingCart'
-import axios from 'axios'
 
 
 class Puppy extends Component{
@@ -23,7 +21,6 @@ class Puppy extends Component{
          
    
         render(){
-            //<ShoppingCart/>
             let { puppy } = this.props
         return(
             <div className="textContainer">  
@@ -31,7 +28,7 @@ class Puppy extends Component{
                     <img className="pupimage" src={puppy.image} alt="" />
                     <h2>{puppy.breed}</h2>
                     <h2>{puppy.description}</h2>
-                    <h3>{"$" + puppy.price + ".00"}</h3>
+                    <h3>{"$" + puppy.price }</h3>
                     <Link to='./puppycart'><button className="buybutton" onClick={() => this.addPupToCart(puppy.id)}>Adopt this Cute Guy!!</button></Link>          
                 </div>
             </div> 

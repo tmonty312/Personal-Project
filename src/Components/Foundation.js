@@ -5,7 +5,7 @@ export default function Foundation(){
      <div className="textContainer">  
         
         <div>
-            Foundation
+            <h1>Foundation</h1>
         </div>
     </div>
     )

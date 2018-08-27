@@ -1,9 +1,7 @@
 import React,{Component} from 'react'
 import Puppy from './Puppy'
-import axios from 'axios'
 import {connect} from 'react-redux'
 import {getPuppies} from '../Ducks/reducer'
-import ShoppingCart from './ShoppingCart';
 
 
 class Dashboard extends Component{
@@ -36,7 +34,6 @@ class Dashboard extends Component{
 }
 
 function mapStateToProps(state) {
-  console.log
   return {
     puppiesList: state.puppiesList
   }

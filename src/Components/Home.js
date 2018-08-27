@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import '../App';
 
-import {Switch, Route, Link} from 'react-router-dom'
-import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 class Home extends Component{
     constructor(){
@@ -17,7 +16,8 @@ render(){
     return(
         <div className="Home">
 <header className="App-header">
-<img src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/13902687_625350567634828_5222364184156045150_n.jpg?_nc_cat=0&oh=34acb1268d760d21e3fbfb303f429876&oe=5BFD8D70" className="App-logo" alt="logo" />
+<img src="https://static.wixstatic.com/media/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.png/v1/fill/w_474,h_414,al_c,q_80,usm_0.66_1.00_0.01/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.webp" className="App-logo" alt="logo"/> 
+
 <h1 className="App-title">happy. healthy. home raised.</h1>
 </header>
 
@@ -29,7 +29,6 @@ render(){
     <Link to='/about'><button className= "homeButtons">About</button></Link>
     <br/>
     <Link to='/faq' ><button className= "homeButtons">FAQ</button></Link>
-    {/* <Dashboard/> */}
 </div>
 </div>
     );

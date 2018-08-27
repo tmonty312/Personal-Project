@@ -20,19 +20,21 @@ module.exports= {
         const db = req.app.get('db')
         const {id} = req.params
         console.log(id)
-        db.addPupToCart([id]).then(results => {
+        db.addPupToCart([id, 1]).then(results => {
             res.status(200).send(results)
         })
     },
-    // updateQuantity: (req, res) => {
-    //     let {id} = req.params
-    //     let {quantity} = req.query
-    //     const db = req.app.get('db')
 
-    //     db.updateQuantity([+quantity, id]).then(results => {
-    //         res.status(200).send(results)
-    //     })
-    // },
+    updateQuantity: (req, res) => {
+        let {id} = req.params
+        let {quantity} = req.query
+        const db = req.app.get('db')
+
+        db.updateQuantity([+quantity, id]).then(results => {
+            res.status(200).send(results)
+        })
+    },
+
     deleteFromCart: (req, res) => {
         let {id} = req.params
         let db = req.app.get('db')
@@ -42,15 +44,15 @@ module.exports= {
     },
 
    checkout: (req, res) => {
-       const db = req.app.get('db')
+       const db = req.app.get('db') 
+       console.log('body', req.body)
        stripe.charges.create(req.body)
        db.checkout()
        .then(results => {
            res.status(200).send(results)
-       })
-       .catch(err => {
+       }).catch(err => {
            console.log(err)
-           res.status(500).send('Card is not emptying')
+           res.status(500).send('Cart is not emptying')
        })
    }
 
