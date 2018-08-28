@@ -30,6 +30,9 @@ render(){
     <br/>
     <Link to='/faq' ><button className= "homeButtons">FAQ</button></Link>
 </div>
+{/* <iframe id="ytplayer" type="text/html" width="640" height="360"
+  src="https://www.youtube.com/watch?v=xfwbq8pvD2s?autoplay=1&origin=http:"
+  frameborder="0"></iframe> */}
 </div>
     );
 }

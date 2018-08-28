@@ -40,9 +40,7 @@ class App extends Component {
 <Route path='/social/youtube' component={() => window.location = 'https://www.youtube.com/channel/UCeb425x8VlfPHxP671f0PMA'}/>
 {/* <Dashboard/> */}
 </Switch>
-        <div className="Footer">
           <Footer/>
-        </div>
       </div>
      
     );

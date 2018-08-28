@@ -35,24 +35,17 @@ export default class Location extends Component{
         <img src="https://static.wixstatic.com/media/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.png/v1/fill/w_474,h_414,al_c,q_80,usm_0.66_1.00_0.01/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.webp" className="App-logo-main-inbox" alt="logo"/> 
         <h1 className="textTitle">LOCATION</h1>        
         <div>
-                <h1>
-                        WHERE TO FIND US:
+                <h1 className="text">
+                        <p>WHERE TO FIND US:</p>
+                    <p>1302 N. Redwood Road</p>
+                        <p>Saratoga Springs, UT 84045</p>
                     <br/>
-                        1302 N. Redwood Road 
+                    <p>WHEN TO FIND US:</p>
+                    <p>Monday - Friday: 11:00am - 7:00pm</p>
+                        <p>Saturday: 10:00am - 8:00pm</p><p>Sunday: Closed</p>
                     <br/>
-                        Saratoga Springs, UT 84045
-                    <br/>
-                        WHEN TO FIND US:
-                    <br/>
-                        Monday - Friday: 11:00am - 7:00pm
-                    <br/>
-                        Saturday: 10:00am - 8:00pm
-                    <br/>
-​                       Sunday: Closed
-                    <br/>
-                        GIVE US A CALL:
-                    <br/>
-                        801.400.3810
+                    <p>GIVE US A CALL:</p>
+                     <p>801.400.3810</p>
                 </h1>
         </div>
         {/* <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">

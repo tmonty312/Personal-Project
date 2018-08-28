@@ -52,7 +52,7 @@ class ShoppingCart extends Component {
             {cart}
             <br />
             <div className="totalBox">
-            <p>Total: ${total}</p>
+            <p className="totalprice">Total: ${total}</p>
             <Checkout amount={total} description="puppies"/>
             </div>
             {/* name={"Puppy Barn"}
