@@ -37,6 +37,21 @@ border-radius: 15px;
   padding: 30px;
 }
 
+.App-logo-main{
+  height:40vh;
+  margin-top: 100px;
+}
+
+.App-logo-main-inbox{
+  height:40vh;
+  margin-top: 10px;
+}
+
+.App-logo-foundation-inbox{
+  width: 85%;
+  margin-bottom: 20px;
+}
+
 .HomeBut{
   margin-bottom: 150px;
   /* display: flex; */
@@ -61,7 +76,21 @@ font-family:  'Lobster', cursive;
 }
 
 .dashTitle {
-  margin-top: 50px;
+  color: white;
+ outline: black;
+ font-family:  'Lobster', cursive;
+  font-size: 2.5em;
+  text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+  margin-top: 0px;
+}
+
+.textTitle{
+  color: black;
+ font-family:  'Lobster', cursive;
+  font-size: xx-large;
+  text-decoration: overline;
+  margin-top: 0px;
 }
 
 .pupimage {
@@ -77,6 +106,11 @@ font-family:  'Lobster', cursive;
 }
 .buybutton{
   margin-bottom: 30px;
+  background-color: rgb(77, 121, 255);
+  color: white;
+  height: 35px;
+  width:auto; 
+  border-radius: 10px;
 }
 
 .textContainer{
@@ -85,7 +119,7 @@ width: 75%;
 height: fit-content;
 margin: 0 auto;
 margin-top: 70px;
-margin-bottom: 120px;
+margin-bottom: 0px;
 border: black;
 border-style: solid;
 border-width: .5px;
@@ -95,9 +129,9 @@ border-radius: 15px;
 .totalBox{
   background:  rgba(242, 246, 247, 0.7);
   width: 20%;
-  height: 17vh;
+  height: 20vh;
   margin: 0 auto;
-  margin-top: 90px;
+  margin-top: 30px;
   margin-bottom: 30px;
   border: black;
   border-style: solid;
@@ -115,20 +149,8 @@ border-radius: 15px;
   top: 0;
   width: 100%;
   display: flex;
-  list-style-type: none;
-    margin: 0;
-    padding: 0;
-   }
-
-   .NavButtons{
-    background-color: transparent;
-    border:transparent;
-    display: flex;
-   justify-content: center;
-   height: 40px;
-     padding: 10px;
-    flex-grow: 0;
-    align-content: center;
+  justify-content: space-around;
+  align-items: center;
    }
 
    .homeNavB{
@@ -142,6 +164,7 @@ font-family:  'Lobster', cursive;
 text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
              #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
   }
+
   .foundationNavB{
     padding: 10px;
     height:40px; 
@@ -220,31 +243,40 @@ text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 .Footer {
   background-color: #262626;
   width: 100%;
   bottom: 0px;
-  width: 100%;
+  width: auto;
   height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .socialButtons{
-  backgound-color: white;
-  height: 50px;
-  width:50px;
-  border-size: 0px;
-  border-radius: 50%;
+  display:block;
+    width:50px;
+    height:50px;
+    line-height:50px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 3px white;
+    font-size: 25px;
+    text-align: center;
 }
 
 .fab{
   color: black;
-  size: 50px;
   width: auto;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.contact{
+  color:white;
+  font-size: 20px;
+  font-family:  'Lobster', cursive;
 }
 /* white logo */
 /* <img src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/13902687_625350567634828_5222364184156045150_n.jpg?_nc_cat=0&oh=34acb1268d760d21e3fbfb303f429876&oe=5BFD8D70" className="App-logo" alt="logo" /> */

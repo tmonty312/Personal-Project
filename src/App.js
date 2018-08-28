@@ -28,8 +28,8 @@ class App extends Component {
         </div>
         <Switch>
           <Route path='/' component={Home} exact />
-<Route path='/location' component={Location}/>
 <Route path='/puppies' component={Dashboard}/>
+<Route path='/location' component={Location}/>
 <Route path='/foundation' component={Foundation}/>
 <Route path='/about' component={About}/>
 <Route path='/faq' component={FAQ}/>

@@ -30,7 +30,7 @@ class ShoppingCart extends Component {
         total += (item.price * item.quantity /2)
         return (
             <div className="textContainer" key={item.id}>
-                <img src={item.image} alt="" />               
+                <img className="pupimage" src={item.image} alt="" />               
                 <h4>{item.breed}</h4>
                 <p>{item.description}</p>
                 <p>${item.price} each</p>
@@ -38,15 +38,17 @@ class ShoppingCart extends Component {
                 <button onClick={() => this.updateQuantity(item.id, 'up', item.quantity)}>▲ </button>
                 <button onClick={() => this.updateQuantity(item.id, 'down', item.quantity)}>▼</button>
                 <br/>
-                <h1>Pay half down to reserve your Pup! Pay the rest when you pick up your new friend!</h1>
-                <h2>(Down payments are non-refundible)</h2>
-                <button onClick={() => this.props.deleteFromCart(item.id)}>Remove This Pup</button>
+                <h1 className="paytext">Pay half down to reserve your Pup! Pay the rest when you pick up your new friend!</h1>
+                <h2 className="pay_text">(Down payments are non-refundible)</h2>
+                <button className="buybutton" onClick={() => this.props.deleteFromCart(item.id)}>Remove This Pup</button>
             </div>
         )
     })
     total = this.round(total, 2)
     return(
         <div>
+            <img src="https://static.wixstatic.com/media/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.png/v1/fill/w_474,h_414,al_c,q_80,usm_0.66_1.00_0.01/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.webp" className="App-logo-main" alt="logo"/> 
+            <h1 className="dashTitle">Your New Puppy</h1>
             {cart}
             <br />
             <div className="totalBox">

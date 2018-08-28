@@ -26,7 +26,8 @@ class Dashboard extends Component{
 
     return(
       <div className= "dashboard">
-        <h3 className= "dashTitle">Bring a Puppy Home!</h3>
+        <img src="https://static.wixstatic.com/media/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.png/v1/fill/w_474,h_414,al_c,q_80,usm_0.66_1.00_0.01/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.webp" className="App-logo-main" alt="logo"/> 
+        <h3 className= "dashTitle">Take a Puppy Home!</h3>
         {puppiesList}
       </div>
     )

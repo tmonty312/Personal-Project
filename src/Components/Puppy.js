@@ -24,7 +24,7 @@ class Puppy extends Component{
             let { puppy } = this.props
         return(
             <div className="textContainer">  
-                <div key={puppy.id}>
+                <div key={puppy.id}> 
                     <img className="pupimage" src={puppy.image} alt="" />
                     <h2>{puppy.breed}</h2>
                     <h2>{puppy.description}</h2>

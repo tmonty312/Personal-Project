@@ -3,8 +3,10 @@ import React from 'react'
 export default function Faq(){
     return (
     <div className="textContainer">  
-    
+        <img src="https://static.wixstatic.com/media/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.png/v1/fill/w_474,h_414,al_c,q_80,usm_0.66_1.00_0.01/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.webp" className="App-logo-main-inbox" alt="logo"/> 
         <div>
+        <h1 className="textTitle">FAQ</h1>
+
             <h1> Where do Puppy Barn puppies come from?
                 <br/>
                     All our beautiful puppies come from local families! We look for home raised puppies that come from working, hunting, or family pet homes.

@@ -32,7 +32,8 @@ export default class Location extends Component{
     render(){
     return( 
     <div className="textContainer">  
-    
+        <img src="https://static.wixstatic.com/media/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.png/v1/fill/w_474,h_414,al_c,q_80,usm_0.66_1.00_0.01/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.webp" className="App-logo-main-inbox" alt="logo"/> 
+        <h1 className="textTitle">LOCATION</h1>        
         <div>
                 <h1>
                         WHERE TO FIND US:
