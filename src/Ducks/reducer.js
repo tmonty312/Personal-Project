@@ -3,7 +3,6 @@ import axios from 'axios'
 let intitialState = {
     puppiesList: [],
     cart: [],
-    email: []
 }
 
 
@@ -15,7 +14,6 @@ const ADD_TO_CART = "ADD_TO_CART"
 const DELETE_FROM_CART = "DELETE_FROM_CART"
 const UPDATE_QUANTITY = "UPDATE_QUANTITY"
 const DELETE_ALL_FROM_CART = "DELETE_ALL_FROM_CART"
-const SEND_EMAIL ="SEND_EMAIL"
 
 export function getPuppies(){
     let puppiesList = axios.get('/api/puppies').then(results => {
@@ -74,16 +72,6 @@ export function emptyCart(){
     }
 }
 
-export function sendEmail(){
-    let email = axios.post(`/api/email`).then(results => {
-        return results.data
-    })
-    return {
-        type: SEND_EMAIL,
-        payload: email
-    }
-}
-
     export default function reducer(state = intitialState, action) {
         switch(action.type){
             case GET_PUPPIES + FULFILLED:
@@ -98,8 +86,6 @@ export function sendEmail(){
             return Object.assign({}, state, {cart: action.payload})
             case DELETE_ALL_FROM_CART:
             return Object.assign({}, state, {cart: []})
-            case SEND_EMAIL + FULFILLED:
-            return Object.assign({}, state, {email: action.payload})
             default: 
             return state
         }

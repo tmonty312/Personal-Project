@@ -54,10 +54,6 @@ border-radius: 15px;
 
 .HomeBut{
   margin-bottom: 150px;
-  /* display: flex; */
-  /* justify-content: space-around; */
-  /* flex-direction: row; */
-  /* flex-wrap: wrap; */
 }
 
 .homeButtons{
@@ -112,6 +108,7 @@ font-family:  'Lobster', cursive;
     border-width: .5px;
     border-radius: 10px;
 }
+
 .buybutton{
   margin-bottom: 30px;
   background-color: rgb(77, 121, 255);
@@ -151,7 +148,7 @@ font-family:  'Lobster', cursive;
 .totalBox{
   background:  rgba(242, 246, 247, 0.7);
   width: 20%;
-  height: 20vh;
+  height: 20px;
   margin: 0 auto;
   margin-top: 35px;
   margin-bottom: 50px;

@@ -1,36 +1,49 @@
 import React, { Component } from 'react'
-//import { sendEmail } from '../Ducks/reducer'
-//import { connect } from ''
 import axios from 'axios'
 
+
+
 export default class Location extends Component{
-
-    handleSubmit(e){
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        axios({
-            method: "POST", 
-            url:"http://localhost:3000/send", 
-            data: {
-                name: name,   
-                email: email,  
-                messsage: message
-            }
-        }).then((response)=>{
-            if (response.data.msg === 'success'){
-                alert("Message Sent."); 
-                this.resetForm()
-            }else if(response.data.msg === 'fail'){
-                alert("Message failed to send.")
-            }
-        })
+    constructor(){
+        super()
+        this.state = {
+            name: '',
+            email: '',
+            message: ''
+        }
     }
-
-    resetForm(){
+    
+    resetForm=()=>{
         document.getElementById('contact-form').reset();
     }
+
+    handleName = (e) => {
+        this.setState({name: e.target.value})
+    }
+
+    handleEmail = (e) => {
+        this.setState({email: e.target.value})
+    }
+
+    handleMessage = (e) => {
+        this.setState({message: e.target.value})
+    }
+    
+    
+    
+    send_Email = () => {
+        const {name, email, message} = this.state
+        const newEmail = {name, email, message }
+        axios.post('/api/email', newEmail).then(results =>{
+            this.setState({
+                name: '',
+                email: '',
+                message: ''
+            })
+            alert ('Message sent')
+        })
+    }
+    
 
     render(){
     return( 
@@ -51,22 +64,19 @@ export default class Location extends Component{
                      <p>801.400.3810</p>
                 </h1>
         </div>
-        <h1 className="textTitle1">Contact Us</h1>
-        <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
-    <div className="form-group">
-        {/* <label for="name">Name</label> */}
-        <input type="text" placeholder="name"className="form-control" id="name" />
-    </div>
-    <div className="form-group">
-        {/* <label for="exampleInputEmail1">Email address</label> */}
-        <input type="email" placeholder="email address" className="form-control" id="email" aria-describedby="emailHelp" />
-    </div>
-    <div className="form-group">
-        {/* <label for="message">Message</label> */}
-        <textarea placeholder="write message here" className="form-control" rows="5" id="message"></textarea>
-    </div>
-    <button type="submit" className="btn btn-primary">Submit</button>
-</form>
+                <form id="contact-form" className="nodemailerform">
+            <h1 className="textTitle1">Contact Us</h1>
+                    <div>
+                        <input className="nodemail" type="text" placeholder="name" value={this.state.name} onChange={this.handleName}/>
+                    </div>
+                    <div>
+                        <input type="email" className="nodemail" id="email" placeholder="email" value={this.state.email} onChange={this.handleEmail}/>
+                    </div>
+                    <div>
+                        <textarea className="nodemailMessage" type="text" rows="5" placeholder="type message here" value={this.state.message} onChange={this.handleMessage}/>
+                    </div>
+                    <button className="buybutton" onClick={this.send_Email}>Send</button>
+                </form>    
     </div>    
     )
 }
