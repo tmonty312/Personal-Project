@@ -1,33 +1,36 @@
 import React, { Component } from 'react'
+//import { sendEmail } from '../Ducks/reducer'
+//import { connect } from ''
+import axios from 'axios'
 
 export default class Location extends Component{
 
-    // handleSubmit(e){
-    //     e.preventDefault();
-    //     const name = document.getElementById('name').value;
-    //     const email = document.getElementById('email').value;
-    //     const message = document.getElementById('message').value;
-    //     axios({
-    //         method: "POST", 
-    //         url:"http://localhost:3000/send", 
-    //         data: {
-    //             name: name,   
-    //             email: email,  
-    //             messsage: message
-    //         }
-    //     }).then((response)=>{
-    //         if (response.data.msg === 'success'){
-    //             alert("Message Sent."); 
-    //             this.resetForm()
-    //         }else if(response.data.msg === 'fail'){
-    //             alert("Message failed to send.")
-    //         }
-    //     })
-    // }
+    handleSubmit(e){
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        axios({
+            method: "POST", 
+            url:"http://localhost:3000/send", 
+            data: {
+                name: name,   
+                email: email,  
+                messsage: message
+            }
+        }).then((response)=>{
+            if (response.data.msg === 'success'){
+                alert("Message Sent."); 
+                this.resetForm()
+            }else if(response.data.msg === 'fail'){
+                alert("Message failed to send.")
+            }
+        })
+    }
 
-    // resetForm(){
-    //     document.getElementById('contact-form').reset();
-    // }
+    resetForm(){
+        document.getElementById('contact-form').reset();
+    }
 
     render(){
     return( 
@@ -48,21 +51,22 @@ export default class Location extends Component{
                      <p>801.400.3810</p>
                 </h1>
         </div>
-        {/* <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
+        <h1 className="textTitle1">Contact Us</h1>
+        <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
     <div className="form-group">
-        <label for="name">Name</label>
-        <input type="text" className="form-control" id="name" />
+        {/* <label for="name">Name</label> */}
+        <input type="text" placeholder="name"className="form-control" id="name" />
     </div>
     <div className="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" className="form-control" id="email" aria-describedby="emailHelp" />
+        {/* <label for="exampleInputEmail1">Email address</label> */}
+        <input type="email" placeholder="email address" className="form-control" id="email" aria-describedby="emailHelp" />
     </div>
     <div className="form-group">
-        <label for="message">Message</label>
-        <textarea className="form-control" rows="5" id="message"></textarea>
+        {/* <label for="message">Message</label> */}
+        <textarea placeholder="write message here" className="form-control" rows="5" id="message"></textarea>
     </div>
     <button type="submit" className="btn btn-primary">Submit</button>
-</form> */}
+</form>
     </div>    
     )
 }

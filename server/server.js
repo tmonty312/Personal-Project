@@ -66,7 +66,8 @@ app.post('/api/cart/:id', cartCtrl.addToCart)
 app.put('/api/cart/:id', cartCtrl.updateQuantity)
 app.delete('/api/cart/:id', cartCtrl.deleteFromCart)
 app.post('/api/checkout', cartCtrl.checkout)
-
+//nodemail
+app.post('/api/email', controller.sendEmail)
 
 
 

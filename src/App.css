@@ -93,6 +93,14 @@ font-family:  'Lobster', cursive;
   margin-top: 0px;
 }
 
+.textTitle1{
+  color: black;
+  font-family:  'Lobster', cursive;
+   font-size: xx-large;
+   text-decoration: underline;
+   margin-top: 0px;
+}
+
 .pupimage {
   display: block;
     margin-left: auto;
