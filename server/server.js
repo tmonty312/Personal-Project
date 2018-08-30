@@ -30,6 +30,8 @@ app.use(session({
 
 app.use(bodyParser.json())
 
+app.use(express.static(`${__dirname}/../build`))
+
 app.get('/api/puppies', controller.getPuppy)
 //cart
 app.get('/api/cart', cartCtrl.getCart)
