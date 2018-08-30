@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express')
 const bodyParser = require('body-parser')
 const controller = require('./Controllers/controller')
@@ -43,6 +44,10 @@ app.get('/auth/callback', AuthCtrl.auth)
 app.get('/api/currentUser', (req,res) => {
     res.send(req.session.user)
 })
+
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 
 
 
