@@ -9,7 +9,7 @@ const cors = require('cors');
 require('dotenv').config()
 
 const cartCtrl = require('./Controllers/cartCtrl')
-const AuthCtrl = require('./controllers/AuthCtrl')
+const AuthCtrl = require('./Controllers/AuthCtrl')
 
 
 const port = process.env.SERVER_PORT || 4141
