@@ -8,6 +8,7 @@ const cors = require('cors');
 require('dotenv').config()
 
 const cartCtrl = require('./Controllers/cartCtrl')
+const AuthCtrl = require('./controllers/AuthCtrl')
 
 
 const port = process.env.SERVER_PORT || 4141
@@ -37,6 +38,11 @@ app.delete('/api/cart/:id', cartCtrl.deleteFromCart)
 app.post('/api/checkout', cartCtrl.checkout)
 //nodemailer
 app.post('/api/email', controller.sendEmail)
+//auth0
+app.get('/auth/callback', AuthCtrl.auth)
+app.get('/api/currentUser', (req,res) => {
+    res.send(req.session.user)
+})
 
 
 

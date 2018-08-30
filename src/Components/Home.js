@@ -14,25 +14,22 @@ class Home extends Component{
 render(){
     
     return(
-        <div className="Home">
-<header className="App-header">
-<img src="https://static.wixstatic.com/media/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.png/v1/fill/w_474,h_414,al_c,q_80,usm_0.66_1.00_0.01/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.webp" className="App-logo" alt="logo"/> 
+<div className="Home">
+    <header className="App-header">
+        <img src="https://static.wixstatic.com/media/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.png/v1/fill/w_474,h_414,al_c,q_80,usm_0.66_1.00_0.01/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.webp" className="App-logo" alt="logo"/> 
 
-<h1 className="App-title">happy. healthy. home raised.</h1>
-</header>
+        <h1 className="App-title">happy. healthy. home raised.</h1>
+    </header>
 
-<div className="HomeBut">
-    <Link to='/location'><button className= "homeButtons">Locations</button></Link>
-    <Link to='/puppies'><button  className= "homeButtons">Puppies</button></Link>
-    <br/>
-    <Link to='/foundation'><button className= "homeButtons">Foundation</button></Link>
-    <Link to='/about'><button className= "homeButtons">About</button></Link>
-    <br/>
-    <Link to='/faq' ><button className= "homeButtons">FAQ</button></Link>
-</div>
-{/* <iframe id="ytplayer" type="text/html" width="640" height="360"
-  src="https://www.youtube.com/watch?v=xfwbq8pvD2s?autoplay=1&origin=http:"
-  frameborder="0"></iframe> */}
+    <div className="HomeBut">
+            <Link to='/location'><button className= "homeButtons">Locations</button></Link>
+            <Link to='/puppies'><button  className= "homeButtons">Puppies</button></Link>
+        <br/>
+            <Link to='/foundation'><button className= "homeButtons">Foundation</button></Link>
+            <Link to='/about'><button className= "homeButtons">About</button></Link>
+        <br/>
+            <Link to='/faq' ><button className= "homeButtons">FAQ</button></Link>
+    </div>
 </div>
     );
 }

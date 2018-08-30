@@ -12,3 +12,10 @@
 
 -- ALTER TABLE cart 
 -- ADD quantity Varchar(20) NOT NULL DEFAULT(0); 
+
+-- create table users (
+--     id SERIAL PRIMARY KEY,
+--     auth_id TEXT,
+--     name VARCHAR,
+--     email VARCHAR,
+-- )
