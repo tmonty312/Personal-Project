@@ -19,3 +19,12 @@
 --     name VARCHAR,
 --     email VARCHAR,
 -- )
+
+-- CREATE TABLE customer(
+--     id serial primary key,
+--      name varchar(20),
+--      email varchar(50),
+--      phone varchar(300),
+--      address varchar(50),
+--      stripeId text
+--  );

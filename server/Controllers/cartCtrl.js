@@ -43,17 +43,29 @@ module.exports= {
         })
     },
 
-   checkout: (req, res) => {
-       const db = req.app.get('db') 
-       console.log('body', req.body)
-       stripe.charges.create(req.body)
-       db.checkout()
-       .then(results => {
-           res.status(200).send(results)
-       }).catch(err => {
-           console.log(err)
-           res.status(500).send('Cart is not emptying')
-       })
-   }
-
+    checkout: async (req, res) => {
+        try{  
+            const db = req.app.get('db')
+            console.log('body', req.body)
+            let {  name, email, phone, combinedAddress, description, source, currency, amount } = req.body
+            let tempCustomer = await stripe.customers.create({email})
+            let charge = {
+                description,
+                source,
+                currency,
+                amount,
+                customer: tempCustomer.customer
+            }
+            
+            let stripeId = await stripe.charges.create(charge)
+                console.log(stripeId.id)
+            let newCustomer = { stripeId: stripeId.id, name, email, phone, address: combinedAddress }
+            let customer = await db.createCustomer(newCustomer)
+            let results = await db.checkout()
+            res.status(200).send({results, customer: customer[0]})
+        } catch (err) {
+            console.log(err)
+            res.status(500).send('Cart is not emptying')
+        }
+    }
 }

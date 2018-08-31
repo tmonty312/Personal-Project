@@ -6,51 +6,50 @@ import { emptyCart } from '../Ducks/reducer'
 
 
 
-
-
-
-
 const CURRENCY = 'USD';
 
 const fromUSDToCent = amount => amount * 100;
 
 const successPayment = data => {
-  alert('Payment Successful');
+  alert('🐕Payment Successful🐕');
 };
 
 const errorPayment = data => {
-  alert('Payment Error');
+  alert('❌Payment Error❌😢🤬');
 };
 
-const onToken = (amount, description, emptyCart) => token =>{
+
+const onToken = (amount, description, emptyCart, addCustomer, closeModal) => token =>{
+  let customer = addCustomer()
 let body = {
   description,
   source: token.id,
   currency: CURRENCY,
-  amount: fromUSDToCent(amount)
+  amount: fromUSDToCent(amount),
+  ...customer
 }
 
   axios.post(process.env.REACT_APP_PAYMENT_SERVER_URL,
     body)
     .then(() => {
-      successPayment()
+      closeModal()
       emptyCart()
+      successPayment()
     })
-    // .then(()=> emptyCart())
     .catch(errorPayment);
   }
 
-const Checkout = ({ name, description, amount, emptyCart }) =>
+const Checkout = ({ name, description, amount, emptyCart, addCustomer, closeModal }) =>
   <StripeCheckout
     name={name}
     description={description}
     amount={fromUSDToCent(amount)}
-    token={onToken(amount, description, emptyCart)}
+    token={onToken(amount, description, emptyCart, addCustomer, closeModal)}
     currency={CURRENCY}
     stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
   
   />
 
- 
+
 
 export default connect(null,{emptyCart})(Checkout);

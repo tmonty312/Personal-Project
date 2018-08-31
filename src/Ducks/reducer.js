@@ -3,6 +3,7 @@ import axios from 'axios'
 let intitialState = {
     puppiesList: [],
     cart: [],
+    customer: []
 }
 
 
@@ -14,6 +15,7 @@ const ADD_TO_CART = "ADD_TO_CART"
 const DELETE_FROM_CART = "DELETE_FROM_CART"
 const UPDATE_QUANTITY = "UPDATE_QUANTITY"
 const DELETE_ALL_FROM_CART = "DELETE_ALL_FROM_CART"
+const CHECKOUT = "CHECKOUT"
 
 export function getPuppies(){
     let puppiesList = axios.get('/api/puppies').then(results => {
@@ -72,6 +74,21 @@ export function emptyCart(){
     }
 }
 
+export function checkout(){
+    let customer = axios.post(`/api/checkout`).then(results =>{
+        return results.data
+        })
+        return{
+            type: CHECKOUT,
+            payload: customer
+        }
+    }
+
+    // export function  closeModal(){
+    //     this.setState({modalIsOpen: false});
+    //   }
+    
+
     export default function reducer(state = intitialState, action) {
         switch(action.type){
             case GET_PUPPIES + FULFILLED:
@@ -86,6 +103,8 @@ export function emptyCart(){
             return Object.assign({}, state, {cart: action.payload})
             case DELETE_ALL_FROM_CART:
             return Object.assign({}, state, {cart: []})
+            case CHECKOUT + FULFILLED: 
+            return Object.assign({}, state, {customer: action.payload})
             default: 
             return state
         }

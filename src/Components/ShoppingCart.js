@@ -2,12 +2,66 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {getCart, updateQuantity, deleteFromCart} from '../Ducks/reducer'
 import Checkout from './Checkout'
+import Modal from 'react-modal'
 
 
 
 class ShoppingCart extends Component {
+    constructor() {
+        super();
+     
+        this.state = {
+          modalIsOpen: false,
+          name: '',
+          email: '',
+          phone: '',
+          address: '' ,
+          city: '',
+          state: '',
+          zip: ''        
+        };
+     
+      }
+
+    handleName = (e) => {
+        this.setState({name: e.target.value})
+    }
+    handleEmail = (e) => {
+        this.setState({email: e.target.value})
+    }
+    handlePhone = (e) => {
+        this.setState({phone: e.target.value})
+    }
+    handleAddress = (e) => {
+        this.setState({address: e.target.value})
+    }
+    handleCity = (e) => {
+        this.setState({city: e.target.value})
+    }
+    handleState = (e) => {
+        this.setState({state: e.target.value})
+    }
+    handleZip = (e) => {
+        this.setState({zip: e.target.value})
+    }
     
-    componentDidMount(){
+    
+    addCustomer = () => {
+        const {name, email, phone, address, city, state, zip } = this.state
+        let combinedAddress = `${address} ${city}, ${state} ${zip}`
+        const newCustomer = { name, email, phone, combinedAddress }
+        return newCustomer
+    }
+   //MODAL  
+      openModal = () =>  {
+        this.setState({modalIsOpen: true});
+      }
+   
+      closeModal = () => {
+        this.setState({modalIsOpen: false});
+      }
+    
+    componentDidMount = () => {
         this.props.getCart()
     }
     
@@ -45,6 +99,7 @@ class ShoppingCart extends Component {
         )
     })
     total = this.round(total, 2)
+    console.log('total', total)
     return(
         <div>
             <img src="https://static.wixstatic.com/media/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.png/v1/fill/w_474,h_414,al_c,q_80,usm_0.66_1.00_0.01/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.webp" className="App-logo-main" alt="logo"/> 
@@ -53,12 +108,29 @@ class ShoppingCart extends Component {
             <br />
             <div className="totalBox">
             <p className="totalprice">Total: ${total}</p>
-            <Checkout amount={total} description="puppies"/>
+            {/* <Checkout amount={total} description="puppies"/> */}
+            <button className="buybutton" onClick={this.openModal}>Checkout</button>
             </div>
-            {/* name={"Puppy Barn"}
-            description={"Your New Puppy"}
-            amount={total}/>
-            <br/> */}
+            <div className="Modalparent">
+                <Modal className="textboxModal"
+                    isOpen={this.state.modalIsOpen}
+                    onAfterOpen={this.afterOpenModal}
+                    onRequestClose={this.closeModal}
+                    contentLabel="Example Modal">
+                        <button onClick={this.closeModal}>close</button>
+                         <div>Checkout</div>
+                        <form>
+                            <input placeholder="name" type='text' value={this.state.name} onChange={this.handleName}/>
+                            <input placeholder="email" type='email' value={this.state.email} onChange={this.handleEmail}/>
+                            <input placeholder="phone" type='phoneNumber' value={this.state.phone} onChange={this.handlePhone}/>
+                            <input placeholder="address" type='text' value={this.state.address} onChange={this.handleAddress}/>
+                            <input placeholder="city" type='text' value={this.state.city} onChange={this.handleCity}/>
+                            <input placeholder="state"type='text' value={this.state.state} onChange={this.handleState}/>
+                            <input placeholder="zip" type='number' value={this.state.zip} onChange={this.handleZip}/>
+                        </form>
+                        <Checkout closeModal={this.closeModal} addCustomer={this.addCustomer} amount={total} description="puppies"/>
+                </Modal>
+             </div>
            
         </div>
     )

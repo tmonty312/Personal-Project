@@ -163,6 +163,25 @@ font-family:  'Lobster', cursive;
   margin-bottom: 4vh;
 }
 
+.Modalperent{
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.textboxModal{
+    border-radius: 6px;
+    width: 300px;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: 0 auto;
+    background-color: #f5f5f7;
+    box-shadow: 0 12px 30px 0 rgba(0,0,0,.5), inset 0 1px 0 0 hsla(0,0%,100%,.65);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
 .Navbar {
   background-color: transparent;
   background: rgba(242, 246, 247, 0.322);

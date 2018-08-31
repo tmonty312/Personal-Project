@@ -12,7 +12,7 @@ const cartCtrl = require('./Controllers/cartCtrl')
 const AuthCtrl = require('./Controllers/authCtrl')
 
 
-const port = process.env.SERVER_PORT || 4141
+const port = process.env.SERVER_PORT 
 
 const app = express()
 
@@ -46,6 +46,7 @@ app.get('/auth/callback', AuthCtrl.auth)
 app.get('/api/currentUser', (req,res) => {
     res.send(req.session.user)
 })
+
 
 app.get('*', (req, res)=>{
     res.sendFile(path.join(__dirname, '../build/index.html'));
