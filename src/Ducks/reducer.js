@@ -16,6 +16,9 @@ const DELETE_FROM_CART = "DELETE_FROM_CART"
 const UPDATE_QUANTITY = "UPDATE_QUANTITY"
 const DELETE_ALL_FROM_CART = "DELETE_ALL_FROM_CART"
 const CHECKOUT = "CHECKOUT"
+const GET_CUSTOMERS = "GET_CUSTOMERS"
+const DELETE_PUPPY = "DELETE_PUPPY"
+const ADD_PUPPY = "ADD_PUPPY"
 
 export function getPuppies(){
     let puppiesList = axios.get('/api/puppies').then(results => {
@@ -24,6 +27,36 @@ export function getPuppies(){
     return{
         type: GET_PUPPIES,
         payload: puppiesList
+    }
+}
+
+export function addPuppy(){
+    let puppiesList = axios.post('/api/puppies').then(results => {
+        return results.data
+    })
+    return{
+        type: ADD_PUPPY,
+        payload: puppiesList
+    }
+}
+
+export function deletePuppy(id){
+    let puppiesList = axios.delete(`/api/puppies/${id}`).then(results =>{
+         return results.data
+       })
+       return {
+           type: DELETE_PUPPY,
+           payload: puppiesList
+       }
+     }
+
+export function getCustomers(){
+    let customer = axios.get('/api/customers').then(results => {
+        return results.data
+    })
+    return{
+        type: GET_CUSTOMERS,
+        payload: customer
     }
 }
 
@@ -84,17 +117,21 @@ export function checkout(){
         }
     }
 
-    // export function  closeModal(){
-    //     this.setState({modalIsOpen: false});
-    //   }
+   
     
 
     export default function reducer(state = intitialState, action) {
         switch(action.type){
             case GET_PUPPIES + FULFILLED:
             return Object.assign({}, state, {puppiesList: action.payload})
+            case DELETE_PUPPY + FULFILLED:
+            return Object.assign({}, state, {puppiesList: action.payload})
+            case ADD_PUPPY + FULFILLED:
+            return Object.assign({}, state, {puppiesList: action.payload})
             case GET_CART + FULFILLED:
             return Object.assign({}, state, {cart: action.payload})
+            case GET_CUSTOMERS + FULFILLED:
+            return Object.assign({}, state, {customer: action.payload})
             case ADD_TO_CART + FULFILLED:
             return Object.assign({}, state, {cart: action.payload})
             case DELETE_FROM_CART + FULFILLED:

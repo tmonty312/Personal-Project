@@ -1,7 +1,17 @@
  const configureStripe = require('stripe')
 
  const stripe = configureStripe(process.env.STRIPE_SECRET_KEY);
-
+ const nodemailer = require('nodemailer');
+ require('dotenv').config()
+ 
+ const transporter = nodemailer.createTransport({
+     host: 'smtp.gmail.com',
+     auth: {
+         type: "login",
+         user: process.env.MY_EMAIL,
+         pass: process.env.EMAIL_PASSWORD
+     }
+ })
 
 module.exports= {
     getCart: (req, res) => {
@@ -43,6 +53,25 @@ module.exports= {
         })
     },
 
+    autoEmail: (req, res) => {
+        const { user_email, message } = req.body;
+
+        const mailOptions = {
+            from: process.env.MY_EMAILEMAIL,
+            to: user_email,
+            subject: 'Thanks for your purchase',
+            text: message
+        }
+
+        transport.sendMail(mailOptions, (error, response) => {
+            if(error) {
+                console.log(error)
+            } else {
+                res.status(200).send(response)
+            }
+        })
+    },
+
     checkout: async (req, res) => {
         try{  
             const db = req.app.get('db')
@@ -54,6 +83,7 @@ module.exports= {
                 source,
                 currency,
                 amount,
+                receipt_email: 'tmonty312@gmail.com',
                 customer: tempCustomer.customer
             }
             

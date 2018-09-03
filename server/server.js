@@ -4,8 +4,6 @@ const bodyParser = require('body-parser')
 const controller = require('./Controllers/controller')
 const massive = require('massive')
 const session = require('express-session')
-const nodemailer = require('nodemailer');
-const cors = require('cors');
 require('dotenv').config()
 
 const cartCtrl = require('./Controllers/cartCtrl')
@@ -31,8 +29,13 @@ app.use(session({
 app.use(bodyParser.json())
 
 app.use(express.static(`${__dirname}/../build`))
-
+//customers
+app.get ('/api/customers', controller.getCustomer)
+//puppies
 app.get('/api/puppies', controller.getPuppy)
+app.post('/api/puppies', controller.addPuppy)
+    //app.put('/api/puppies/:id', controller.updatePuppy)
+app.delete('/api/puppies/:id', controller.deletePuppy)
 //cart
 app.get('/api/cart', cartCtrl.getCart)
 app.post('/api/cart/:id', cartCtrl.addToCart)
@@ -41,6 +44,7 @@ app.delete('/api/cart/:id', cartCtrl.deleteFromCart)
 app.post('/api/checkout', cartCtrl.checkout)
 //nodemailer
 app.post('/api/email', controller.sendEmail)
+    //app.post('/api/cart/email', controller.cartCtrl)
 //auth0
 app.get('/auth/callback', AuthCtrl.auth)
 app.get('/api/currentUser', (req,res) => {

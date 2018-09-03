@@ -1,3 +1,3 @@
-INSERT INTO puppies (id, breed, description, price, image)
-VALUES (${id},${breed},${description},${price},${image})
-RETURNING *;
+INSERT INTO puppies ( breed, description, price, image)
+VALUES (${breed},${description},${price},${image});
+SELECT * FROM puppies;

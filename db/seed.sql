@@ -28,3 +28,7 @@
 --      address varchar(50),
 --      stripeId text
 --  );
+
+-- 2	Great Pyrenees	Large and Fluffy	500	http://1.bp.blogspot.com/-CgROVN0tRQo/UCITwIvaQvI/AAAAAAAABOo/A_VuhRUMjYI/s400/Cute_Great_Pyrenees_Puppy.jpg
+-- German Shepard	big and athletic	500	http://buzzsharer.com/wp-content/uploads/2015/07/emotions-happy-german-shepherd-puppy.jpg
+-- 5	Chow	Just Cute	885.44	https://gfp-2a3tnpzj.stackpathdns.com/wp-content/uploads/2016/07/Chow-Chow-Puppies-For-Sale-600x600.jpg

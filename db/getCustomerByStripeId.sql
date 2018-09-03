@@ -1,3 +1,3 @@
 SELECT *
-FROM users
+FROM customer
 WHERE stripeId = $1;

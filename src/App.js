@@ -11,6 +11,7 @@ import Footer from './Components/Footer'
 import Navbar from './Components/Navbar'
 import ShoppingCart from './Components/ShoppingCart'
 import Checkout from './Components/Checkout'
+import CustomersList from './Components/CustomersList';
 import { Switch, Route } from 'react-router-dom'
 
 
@@ -33,6 +34,7 @@ class App extends Component {
 <Route path='/foundation' component={Foundation}/>
 <Route path='/about' component={About}/>
 <Route path='/faq' component={FAQ}/>
+<Route path='/customers' component={CustomersList}/>
 <Route path='/puppycart' component={ShoppingCart}/>
 <Checkout/>
 <Route path='/social/ig' component={() => window.location = 'https://www.instagram.com/thepuppybarn/'}/>
