@@ -50,6 +50,10 @@ app.get('/auth/callback', AuthCtrl.auth)
 app.get('/api/currentUser', (req,res) => {
     res.send(req.session.user)
 })
+app.get('/api/logout', (req, res) => {
+    req.session.destroy()
+    res.sendStatus(200)
+})
 
 
 app.get('*', (req, res)=>{

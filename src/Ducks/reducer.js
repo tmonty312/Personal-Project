@@ -3,7 +3,8 @@ import axios from 'axios'
 let intitialState = {
     puppiesList: [],
     cart: [],
-    customer: []
+    customer: [],
+    data: null
 }
 
 
@@ -19,9 +20,15 @@ const CHECKOUT = "CHECKOUT"
 const GET_CUSTOMERS = "GET_CUSTOMERS"
 const DELETE_PUPPY = "DELETE_PUPPY"
 const ADD_PUPPY = "ADD_PUPPY"
+const GET_USER = 'GET_USER'
+const GET_USER_FULFILLED = 'GET_USER_FULFILLED'
+
+const LOGOUT_USER = 'LOGOUT_USER'
+const LOGOUT_USER_FULFILLED = 'LOGOUT_USER_FULFILLED'
 
 export function getPuppies(){
     let puppiesList = axios.get('/api/puppies').then(results => {
+        console.log(results)
         return results.data
     })
     return{
@@ -116,7 +123,19 @@ export function checkout(){
             payload: customer
         }
     }
-
+    
+    export function getUser(){
+        return{
+            type: GET_USER,
+            payload: axios.get('/api/currentUser')
+        }
+    }
+        export function logout() {
+            return {
+                type: LOGOUT_USER,
+                payload: axios.get('/api/logout')
+            }
+    }
    
     
 
@@ -142,8 +161,13 @@ export function checkout(){
             return Object.assign({}, state, {cart: []})
             case CHECKOUT + FULFILLED: 
             return Object.assign({}, state, {customer: action.payload})
+            case GET_USER_FULFILLED:
+            return{ ...state, data: action.payload.data }
+            case LOGOUT_USER_FULFILLED:
+            return {state, data: null}
             default: 
-            return state
+            return state;
+
         }
     }
 

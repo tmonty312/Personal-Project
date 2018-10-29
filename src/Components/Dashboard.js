@@ -64,12 +64,12 @@ addPuppy = () => {
         <img src="https://static.wixstatic.com/media/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.png/v1/fill/w_474,h_414,al_c,q_80,usm_0.66_1.00_0.01/693150_f8abf0d27b5e4e4d9d4431dfb46483f0~mv2_d_1500_1308_s_2.webp" className="App-logo-main" alt="logo"/> 
         <h3 className= "dashTitle">Take a Puppy Home!</h3>
         <div className="textContainer-pup">
-                <h1>Add New Puppy</h1>
+                {/* <h1>Add New Puppy</h1>
                     <input placeholder='image url' value={this.state.image} onChange={this.handleImage}></input>
                     <input placeholder='breed' value={this.state.breed} onChange={this.handleBreed}></input>
                     <input placeholder='price' value={this.state.price} onChange={this.handlePrice}></input>
                     <textarea placeholder='descripton' value={this.state.description} onChange={this.handleDescription}/>
-                    <button onClick={() => this.addPuppy()}>Add new pup</button>
+                    <button onClick={() => this.addPuppy()}>Add new pup</button> */}
                 </div>
         {puppiesList}
       </div>

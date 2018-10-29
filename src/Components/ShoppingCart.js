@@ -127,8 +127,8 @@ class ShoppingCart extends Component {
                             <input placeholder="city" type='text' value={this.state.city} onChange={this.handleCity}/>
                             <input placeholder="state"type='text' value={this.state.state} onChange={this.handleState}/>
                             <input placeholder="zip" type='number' value={this.state.zip} onChange={this.handleZip}/>
-                        </form>
-                        <Checkout closeModal={this.closeModal} addCustomer={this.addCustomer} amount={total} description="puppies"/>
+                        </form> 
+                        <Checkout closeModal={this.closeModal} addCustomer={this.addCustomer} amount={total} description="The Puppy Barn"/>
                 </Modal>
              </div>
            
