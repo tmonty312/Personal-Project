@@ -46,7 +46,7 @@ class Puppy extends Component{
                     <h3>{puppy.description}</h3>
                     <h3>{"$" + puppy.price }</h3>
                     {/* <button className= "buttons" onClick={ this.toggleEdit}>Edit Puppy</button> */}
-                    <button className="buybutton" onClick={() => this.props.deletePuppy(puppy.id)}>Remove pup</button>
+                    {/* <button className="buybutton" onClick={() => this.props.deletePuppy(puppy.id)}>Remove pup</button> */}
                     
                     <Link to='./puppycart'><button className="buybutton" onClick={() => this.addPupToCart(puppy.id)}>Adopt this Cute Guy!!</button></Link>          
                 </div>

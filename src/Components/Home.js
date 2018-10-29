@@ -29,7 +29,7 @@ render(){
             <Link to='/about'><button className= "homeButtons">About</button></Link>
         <br/>
             <Link to='/faq' ><button className= "homeButtons">FAQ</button></Link>
-            <Link to='/customers'><button className= "homeButtons">Customers</button></Link>
+            {/* <Link to='/customers'><button className= "homeButtons">Customers</button></Link> */}
     </div>
 </div>
     );

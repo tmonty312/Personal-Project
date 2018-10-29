@@ -12,6 +12,8 @@ const transporter = nodemailer.createTransport({
 
 module.exports = {
   getPuppy: (req, res) =>{
+    console.log('req', req)
+
     const db = req.app.get('db')
     db.getPuppies().then(results =>{
         res.status(200).send(results)
